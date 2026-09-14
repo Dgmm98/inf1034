@@ -5,7 +5,6 @@ def desenha_retangulo(x, y, larg, alt, color):
     t.pu()
     t.goto(x, y)
     t.pd()
-
     t.begin_fill()
     t.fillcolor(color)
     for _ in range(2):
