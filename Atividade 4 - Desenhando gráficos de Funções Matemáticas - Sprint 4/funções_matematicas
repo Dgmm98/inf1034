@@ -1,0 +1,52 @@
+from turtle import *
+from random import randint
+import numpy as np
+
+t = Turtle()
+
+
+def plano(a,b):
+    t.teleport(0,0)
+    t.goto(a,0)
+    t.stamp()
+    t.left(180)
+    t.goto(-a,0)
+    t.stamp()
+    t.left(90)
+    t.teleport(0,0)
+    t.goto(0,b)
+    t.stamp()
+    t.left(180)
+    t.goto(0,-b)
+    t.stamp()
+
+
+t1 = Turtle()
+t1.hideturtle()
+def formula1():
+    t1.showturtle()
+    t1.teleport(0,0)
+    t1.color("red")
+    for i in range(200):
+        t1.goto(i,i**(1/2))
+    t1.clear()
+    t1.hideturtle()
+t2 = Turtle()
+t2.hideturtle()
+def formula2():
+    t2.showturtle()
+    t2.teleport(-100,0)
+    t2.color("red")
+    for i in np.arange(-1,-0.008,0.01):
+        t2.goto(100*i,1/i)
+    t2.teleport(0.5,(1/0.005))
+    for i in np.arange(0.005,2,0.1):
+        t2.goto(100*i,1/i)
+    t2.clear()
+    t2.hideturtle()
+
+plano(200,200)
+
+formula2()
+
+mainloop()
