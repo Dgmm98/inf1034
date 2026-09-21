@@ -1,6 +1,7 @@
 from turtle import *
 from random import randint
 import numpy as np
+from time import sleep
 
 t = Turtle()
 
@@ -29,8 +30,9 @@ def formula1():
     t1.color("red")
     for i in range(200):
         t1.goto(i,i**(1/2))
-    t1.clear()
     t1.hideturtle()
+    sleep(5)
+    t1.clear()
 t2 = Turtle()
 t2.hideturtle()
 def formula2():
@@ -42,11 +44,92 @@ def formula2():
     t2.teleport(0.5,(1/0.005))
     for i in np.arange(0.005,2,0.1):
         t2.goto(100*i,1/i)
-    t2.clear()
     t2.hideturtle()
+    sleep(5)
+    t2.clear()
+t3 = Turtle()
+t3.hideturtle()
+def formula3():
+    t3.showturtle()
+    t3.teleport(0,1)
+    t3.color("green")
+    for i in range(8):
+        t3.goto(i,2**i)
+    t3.hideturtle()
+    sleep(5)
+    t3.clear()
 
+t4 = Turtle()
+t4.hideturtle()
+def formula4():
+    t4.showturtle()
+    t4.teleport(0,5)
+    t4.color("blue")
+    for i in range(15):
+        t4.goto(i,5-i**2)
+    t4.hideturtle()
+    sleep(5)
+    t4.clear()
+
+t5 = Turtle()
+t5.hideturtle()
+def formula5():
+    t5.showturtle()
+    t5.teleport(0,6)
+    t5.color("orange")
+    for i in range(12):
+        t5.goto(i,i**2+5*i+6)
+    t5.hideturtle()
+    sleep(5)
+    t5.clear()
+
+t6 = Turtle()
+t6.hideturtle()
+def formula6():
+    t6.showturtle()
+    t6.teleport(-5,-104)
+    t6.color("purple")
+    for i in range(-5,8):
+        t6.goto(i,i**3-i**2-i+1)
+    t6.hideturtle()
+    sleep(5)
+    t6.clear()
 plano(200,200)
 
+formula1()
 formula2()
+formula3()
+formula4()
+formula5()
+formula6()
+t.clear()
+t.hideturtle()
+
+
+def corrida(n):
+    p = {}
+    chegada = True
+    for i in range(n):
+        p[i] = Turtle()
+        p[i].shape("turtle")
+        r = randint(3,8)/10
+        g = randint(3,8)/10
+        b = randint(3,8)/10
+        p[i].color(r, g, b)
+    for m in p:
+        p[m].teleport(0,0+20*m)
+
+    while chegada:
+        for j in p:
+            p[j].forward(randint(1, 10))
+            if p[j].xcor() >= 200:
+                chegada = False
+                break
+
+    
+    
+
+corrida(5)
+    
 
 mainloop()

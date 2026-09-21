@@ -30,6 +30,7 @@ while running:
     #sol
     draw.circle(screen,"#bd4d19",(150,150),50)
     draw.line(screen,"#bd4d19",(50,50),(250,250),5)
+    draw.line(screen,"#bd4d19",(90,25),(200,275),5)
 
 
     screen.blit(imagem,(1100,550))
